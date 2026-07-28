@@ -1,111 +1,274 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casa Verde — Triagem do Dr. Bacamarte</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; }
+  a { color: #4a7c3f; }
+  a:hover { color: #e8c84a; }
+  @keyframes modalIn { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  @keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
+</helmet>
 
-  <!-- ── INTRO ──────────────────────────────────────────────────────────── -->
-  <div id="tela-intro" class="tela ativa">
-    <div class="papel">
-      <div class="timbre">
-        <p class="timbre-titulo">CASA VERDE</p>
-        <p class="timbre-sub">Instituto de Alienados de Itaguaí</p>
-        <p class="timbre-sub">Sob a direcção do Dr. Simão Bacamarte</p>
-        <div class="linha-decorativa"></div>
+<div style="min-height:100vh; background:#f5f1e3; font-family:'JetBrains Mono', monospace; color:#1a1a1a; position:relative;">
+
+  <div style="position:fixed; top:0; left:0; height:4px; background:#e8c84a; z-index:1000; transition:width 0.1s; width:{{ scrollProgress }}%;"></div>
+
+  <div style="display:flex; align-items:flex-start; max-width:1320px; margin:0 auto;">
+
+    
+
+    <aside style="width: 261px; flex-shrink: 0; padding: 40px 24px; border-right: 3px solid #2b2b2b; position: sticky; top: 0; height: 902px; box-sizing: border-box">
+      <div style="font-family: 'Press Start 2P', monospace; font-size:13px; letter-spacing: 1px; line-height: 1.9; color: #1a1a1a; width: 170px; height: 160px">EGGOTWIN.TXT<img src="./assets/eucion-mre0wcp1.png" alt="eucion" style="max-width: 100%; height: 139px; display: block; object-fit: cover; width: 121px"></div>
+      <div style="font-size:11px; line-height:2.2; color:#6b6b6b; margin-top:14px;">Filipe | EggoTwin <br>Desenvolvedor de jogos e estudante de Sistemas de Informação no IFC Camboriú, com formação técnica em Informática pelo IFMA — campus Codó. Estagiário no Instituto Federal Catarinense, onde também curso a graduação.  Faço jogos educacionais — e meu autor favorito para isso é Machado de Assis.  O mais recente é O Alienista: um jogo de simulação e dedução no estilo Papers, Please, onde o jogador opera a Casa Verde como funcionário do doutor Bacamarte —aplicando decretos, interrogando pacientes e carimbando destinos. Feito em Godot 4, com sistema de localização pt/en e conteúdo baseado na novela original do século XIX.   Quando não estou programando: música, jogos e livros técnicos.     🔧 Godot 4 · Game Design · Localização📍 Camboriú — SC, Brasil</div>
+    </aside><main style="flex:1; min-width:0; padding:40px 48px 24px; box-sizing:border-box;">
+
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+        <h1 style="font-family:'Press Start 2P', monospace; font-size:17px; letter-spacing:1px; margin:0;">Projetos</h1>
       </div>
 
-      <h1>Triagem de Admissão</h1>
+      
 
-      <p class="intro-texto">
-        Por ordem do ilustre alienista Dr. Simão Bacamarte, todo cidadão de Itaguaí
-        está sujeito à avaliação científica das suas faculdades mentais.
-      </p>
-      <p class="intro-texto">
-        Responda com sinceridade. A ciência não julga — apenas <em>classifica</em>.
-      </p>
+      <section style="margin-top:32px;">
+        <span style="display:inline-block; font-family:'Press Start 2P', monospace; font-size:9px; color:#6b6b6b; letter-spacing:1px; margin-bottom:10px;">▸ 01 — VISÃO GERAL</span>
+        <h2 style="font-family:'Press Start 2P', monospace; font-size:14px; margin:0 0 14px; letter-spacing:1px;">O que eu construí</h2>
+        <p style="font-size:13px; line-height:2; color:#333; margin:0 0 16px;">Cada projeto é um produto de inovação tecnológica desenvolvido dentro de projeto de extenssão da faculdade, um como bolsista e outro como voluntário.</p>
+        <div style="border:2px solid #2b2b2b; background:#fffdf6; padding:14px 16px; font-size:11px; line-height:1.9; color:#333;">
+          <span style="display:block; font-family:'Press Start 2P', monospace; font-size:9px; margin-bottom:6px;">ℹ️ COMO NAVEGAR</span>
+          Clique em qualquer card abaixo para abrir os detalhes completos do projeto.
+        </div>
+      </section>
 
-      <div class="campo-nome">
-        <label for="nome-input">Seu nome completo:</label>
-        <input type="text" id="nome-input" placeholder="Ex: João da Silva Pereira" maxlength="50" autocomplete="off">
+      <section style="margin-top:40px;">
+        <span style="display:inline-block; font-family:'Press Start 2P', monospace; font-size:9px; color:#6b6b6b; letter-spacing:1px; margin-bottom:10px;">▸ 02 — TIMELINE DE PROJETOS</span>
+        <h2 style="font-family:'Press Start 2P', monospace; font-size:14px; margin:0 0 20px; letter-spacing:1px;">Projetos em Ordem</h2>
+
+        <div style="position:relative; padding:8px 0; margin-top:8px;">
+          <div style="position:absolute; left:50%; transform:translateX(-50%); top:0; bottom:0; width:3px; background:repeating-linear-gradient(to bottom, #2b2b2b 0px, #2b2b2b 6px, transparent 6px, transparent 12px);"></div>
+
+          <div style="display:flex; align-items:flex-start; position:relative; margin-bottom:48px;">
+            <div onclick="{{ openP1 }}" role="button" tabindex="0" style="flex:0 0 calc(50% - 28px); margin-right:28px; background:#fffdf6; border:3px solid #2b2b2b; box-shadow:4px 4px 0 #2b2b2b; padding:20px; cursor:pointer; position:relative; transition:all 0.12s;" style-hover="border-color:#e8c84a; box-shadow:6px 6px 0 #e8c84a; transform:translate(-2px,-2px); background:#fffdf0;" style-after="content:''; position:absolute; right:-13px; top:29px; width:13px; height:3px; background:#2b2b2b;">
+              <span style="font-size:8px; background:#e8c84a; border:2px solid #2b2b2b; padding:3px 8px; display:inline-block; margin-bottom:12px; letter-spacing:1px;">{{ projects.1.tag }}</span>
+              <img src="./assets/capa-com-titulos-export-mre0llx1.png" alt="capa-com-titulos-export" style="max-width: 100%; height: auto; display: block; object-fit: cover"><div style="font-size:10px; color:#6b6b6b; margin-bottom:6px;">{{ projects.0.year }}</div>
+              <div style="font-family:'Press Start 2P', monospace; font-size:12px; margin-bottom:10px; line-height:1.6; letter-spacing:1px;">{{ projects.0.title }}</div>
+              <div style="font-size:11px; color:#555; line-height:2; margin-bottom:14px;">{{ projects.0.desc }}</div>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
+                <span style="font-size:9px; border:2px solid #2b2b2b; background:#e8c84a; padding:3px 7px;">{{ projects.0.stack.0 }}</span>
+                <span style="font-size:9px; border:2px solid #2b2b2b; background:#e8c84a; padding:3px 7px;">{{ projects.0.stack.1 }}</span>
+                <span style="font-size:9px; border:2px solid #2b2b2b; background:#e8c84a; padding:3px 7px;">{{ projects.0.stack.2 }}</span>
+              </div>
+              <div style="font-size:10px; color:#6b6b6b; display:flex; align-items:center; gap:6px;">VER PROJETO COMPLETO <span>→</span></div>
+            </div>
+            <div style="flex:0 0 calc(50% - 12px); min-width:calc(50% - 12px);"></div>
+            <div style="position:absolute; left:50%; transform:translateX(-50%); top:20px; width:18px; height:18px; background:#12172a; border:3px solid #e8c84a; z-index:2;"></div>
+          </div>
+
+          <div style="display:flex; align-items:flex-start; position:relative; margin-bottom:0;">
+            <div style="flex:0 0 calc(50% - 12px); min-width:calc(50% - 12px);"></div>
+            <div style="position:absolute; left:50%; transform:translateX(-50%); top:20px; width:18px; height:18px; background:#12172a; border:3px solid #4a7c3f; z-index:2;"></div>
+            <div onclick="{{ openP2 }}" role="button" tabindex="0" style="flex:0 0 calc(50% - 28px); margin-left:28px; background:#fffdf6; border:3px solid #2b2b2b; box-shadow:4px 4px 0 #2b2b2b; padding:20px; cursor:pointer; position:relative; transition:all 0.12s;" style-hover="border-color:#4a7c3f; box-shadow:6px 6px 0 #4a7c3f; transform:translate(-2px,-2px); background:#f2fff2;" style-before="content:''; position:absolute; left:-13px; top:29px; width:13px; height:3px; background:#2b2b2b;">
+              <span style="font-size:8px; background:#4a7c3f; color:#fff; border:2px solid #2b2b2b; padding:3px 8px; display:inline-block; margin-bottom:12px; letter-spacing:1px;">{{ projects.0.tag }}</span>
+              <img src="./assets/capamenusite-mre0hi55.png" alt="capamenusite" style="max-width: 100%; height: 187px; display: block; object-fit: cover; width: 366px"><div style="font-size:10px; color:#6b6b6b; margin-bottom:6px;">{{ projects.1.year }}</div>
+              <div style="font-family:'Press Start 2P', monospace; font-size:12px; margin-bottom:10px; line-height:1.6; letter-spacing:1px;">{{ projects.1.title }}</div>
+              <div style="font-size:11px; color:#555; line-height:2; margin-bottom:14px;">{{ projects.1.desc }}</div>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
+                <span style="font-size:9px; border:2px solid #4a7c3f; background:#cde8c8; color:#4a7c3f; padding:3px 7px;">{{ projects.1.stack.0 }}</span>
+                <span style="font-size:9px; border:2px solid #4a7c3f; background:#cde8c8; color:#4a7c3f; padding:3px 7px;">{{ projects.1.stack.1 }}</span>
+                <span style="font-size:9px; border:2px solid #4a7c3f; background:#cde8c8; color:#4a7c3f; padding:3px 7px;">{{ projects.1.stack.2 }}</span>
+              </div>
+              <div style="font-size:10px; color:#6b6b6b; display:flex; align-items:center; gap:6px;">VER PROJETO COMPLETO <span>→</span></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <aside style="width: 190px; flex-shrink: 0; padding: 40px 24px 0; border-left: 3px solid #2b2b2b; position: sticky; top: 0; height: 100vh; box-sizing: border-box; display:flex; flex-direction:column;">
+      <div style="margin-bottom:32px;">
+        <span style="display:block; font-family:'Press Start 2P', monospace; font-size:10px; letter-spacing:1px; margin-bottom:12px; color:#6b6b6b;">SOBRE</span>
+        <div style="display:flex; justify-content:space-between; font-size:11px; padding:5px 0; border-bottom:1px solid rgba(0,0,0,0.08);"><span>Projetos</span><span>2</span></div>
+        <div style="display:flex; justify-content:space-between; font-size:11px; padding:5px 0; border-bottom:1px solid rgba(0,0,0,0.08);"><span>Status</span><span style="font-size:8px;">EM PROGRESSO</span></div>
+        <div style="display:flex; justify-content:space-between; font-size:11px; padding:5px 0; border-bottom:1px solid rgba(0,0,0,0.08);"><span>Linguagens</span><span>2</span></div>
       </div>
+      <div style="margin-bottom:20px;">
+        <span style="display:block; font-family:'Press Start 2P', monospace; font-size:10px; letter-spacing:1px; margin-bottom:12px; color:#6b6b6b;">TECH STACK</span>
+        <div style="display:flex; flex-wrap:wrap; gap:6px;">
+          <span style="font-size:9px; border:1px solid #4a7c3f; color:#4a7c3f; padding:3px 7px;">godot4</span>
+          <span style="font-size:9px; border:1px solid #6b6b6b; color:#6b6b6b; padding:3px 7px;">pixel art</span>
+          <span style="font-size:9px; border:1px solid #6b6b6b; color:#6b6b6b; padding:3px 7px;">html/css</span>
+          <span style="font-size:9px; border:1px solid #4a7c3f; color:#4a7c3f; padding:3px 7px;">javascript</span>
+          <span style="font-size:9px; border:1px solid #6b6b6b; color:#6b6b6b; padding:3px 7px;">gdscript</span>
+        </div>
+      </div>
+      <div style="flex:1; overflow:hidden; display:flex; flex-direction:column; margin:0 -24px; border-top:2px solid #2b2b2b;">
+        <div style="font-family:'Press Start 2P',monospace; font-size:8px; padding:8px 12px; background:#12172a; color:#e8c84a; letter-spacing:1px; border-bottom:2px solid #2b2b2b; flex-shrink:0;">▸ PORTFÓLIO · ARTE</div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:3px; padding:4px; overflow-y:auto; flex:1;">
+          <sc-for list="{{ portfolioImages }}" as="pimg" hint-placeholder-count="26">
+            <div onclick="{{ pimg.onClick }}" title="{{ pimg.label }}" style="aspect-ratio:1; overflow:hidden; cursor:zoom-in; border:2px solid #2b2b2b; background:#12172a;" style-hover="border-color:#e8c84a;">
+              <img ref="{{ pimg.setRef }}" alt="{{ pimg.label }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </aside>
 
-      <button id="btn-iniciar" class="botao-primario">Iniciar Avaliação</button>
-
-      <p class="aviso-rodape">
-        * Ao prosseguir, o avaliado consente com o exame clínico e eventual internação na Casa Verde.
-      </p>
-    </div>
   </div>
 
-  <!-- ── QUIZ ───────────────────────────────────────────────────────────── -->
-  <div id="tela-quiz" class="tela">
-    <div class="papel">
-      <div class="cabecalho-quiz">
-        <span class="numero-pergunta" id="num-pergunta">1 / 10</span>
-        <div class="barra-progresso">
-          <div class="barra-progresso-inner" id="barra-inner"></div>
+  <section style="max-width:880px; margin:24px auto 80px; padding:0 48px; box-sizing:border-box;">
+    
+  </section>
+
+  <sc-if value="{{ openProject }}" hint-placeholder-val="{{ false }}">
+    <div onclick="{{ closeProject }}" style="position:fixed; inset:0; background:rgba(10,10,10,0.65); z-index:2000; display:flex; align-items:center; justify-content:center; padding:24px; box-sizing:border-box; animation:overlayIn 0.15s ease-out forwards;">
+      
+    <div onclick="{{ stopPropagation }}" style="max-width: 960px; width: 900px; background: #fffdf6; border: 3px solid #2b2b2b; box-shadow: 8px 8px 0 #2b2b2b; padding: 32px 0 0; position: relative; animation: modalIn 0.18s ease-out forwards; max-height: 90vh; box-sizing: border-box; height: 1167px; display:flex; flex-direction:column;">
+        <button onclick="{{ closeProject }}" style="position:absolute; top:16px; right:16px; width:26px; height:26px; border:2px solid #2b2b2b; background:#fff; font-size:14px; cursor:pointer; line-height:1; z-index:2;">✕</button>
+        <div style="padding:0 32px; flex-shrink:0;">
+          <span style="font-size:8px; background:{{ openProject.badgeBg }}; color:{{ openProject.badgeColor }}; border:2px solid #2b2b2b; padding:3px 8px; display:inline-block; margin-bottom:14px; letter-spacing:1px;">{{ openProject.tag }}</span>
+          <div style="font-size:11px; color:#6b6b6b; margin-bottom:8px;">{{ openProject.year }}</div>
+          <div style="font-family:'Press Start 2P', monospace; font-size:15px; margin-bottom:16px; line-height:1.6; letter-spacing:1px;">{{ openProject.title }}</div>
         </div>
-      </div>
-      <p id="texto-pergunta" class="pergunta"></p>
-      <div id="opcoes" class="opcoes"></div>
+        <div style="padding:0 32px; overflow:auto; flex:1; min-height:0;">
+          <p style="font-size:12px; color:#333; line-height:2.1; margin:0 0 18px; white-space:pre-wrap;">{{ openProject.detail }}</p>
+        </div>
+        <div style="padding:16px 32px; flex-shrink:0; border-top:2px solid #2b2b2b; background:#fffdf6;">
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;">
+            <sc-for list="{{ openProject.stack }}" as="tag" hint-placeholder-count="3">
+              <span style="font-size:9px; border:2px solid #2b2b2b; background:#e8c84a; padding:3px 7px;">{{ tag }}</span>
+            </sc-for>
+          </div>
+          <a href="https://filipemedeiros.itch.io/o-alienista" target="_blank" style="display:inline-flex; align-items:center; gap:6px; font-size:11px; color:#1a1a1a; text-decoration:none; border:2px solid #2b2b2b; padding:8px 14px; background:#fff;" style-hover="background:#1a1a1a; color:#fff;">VISITAR PROJETO →</a>
+        </div>
+      </div></div>
+  </sc-if>
+
+  <!-- Zoom portfólio -->
+  <sc-if value="{{ portfolioZoomOpen }}" hint-placeholder-val="{{ false }}">
+    <div onclick="{{ closePortfolioZoom }}" style="position:fixed; inset:0; background:rgba(10,10,10,0.88); z-index:3000; display:flex; align-items:center; justify-content:center; padding:24px; box-sizing:border-box; animation:overlayIn 0.15s ease-out forwards; cursor:zoom-out;">
+      <img ref="{{ setPortfolioZoomRef }}" style="max-width:90vw; max-height:90vh; border:3px solid #2b2b2b; box-shadow:8px 8px 0 rgba(0,0,0,0.5); animation:modalIn 0.18s ease-out forwards; cursor:default;" onclick="{{ stopPropagation }}">
+      <button onclick="{{ closePortfolioZoom }}" style="position:absolute; top:24px; right:24px; width:34px; height:34px; border:2px solid #2b2b2b; background:#fff; font-size:16px; cursor:pointer; line-height:1;" style-hover="background:#e8c84a;">✕</button>
     </div>
-  </div>
+  </sc-if>
 
-  <!-- ── RESULTADO ──────────────────────────────────────────────────────── -->
-  <div id="tela-resultado" class="tela">
-    <div class="papel dossie" id="dossie">
-      <div class="timbre">
-        <p class="timbre-titulo">CASA VERDE</p>
-        <p class="timbre-sub">Ficha de Triagem — Uso Interno</p>
-        <div class="linha-decorativa"></div>
-      </div>
+</div>
 
-      <div class="dossie-campos">
-        <div class="campo-doc">
-          <span class="campo-label">Paciente:</span>
-          <span id="doc-nome" class="campo-valor"></span>
-        </div>
-        <div class="campo-doc">
-          <span class="campo-label">N.º do Processo:</span>
-          <span id="doc-numero" class="campo-valor"></span>
-        </div>
-        <div class="campo-doc">
-          <span class="campo-label">Data da Avaliação:</span>
-          <span id="doc-data" class="campo-valor"></span>
-        </div>
-      </div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    scrollProgress: 0,
+    openId: null,
+    portfolioZoom: null,
+  };
 
-      <div class="decreto-box">
-        <p class="decreto-numero" id="doc-decreto-num"></p>
-        <p class="decreto-nome" id="doc-decreto-nome"></p>
-        <p class="decreto-texto" id="doc-decreto-texto"></p>
-      </div>
+  portfolioImgEls = [];
+  portfolioZoomImgEl = null;
 
-      <div class="diagnostico-box">
-        <p class="diagnostico-label">Parecer do Dr. Simão Bacamarte:</p>
-        <p id="doc-diagnostico" class="diagnostico-texto"></p>
-      </div>
+  portfolioImages = [
+    'armazem.png','floresta_luarn.png','fundo cidade noite.png','mata dia rework.png',
+    'navio africa.png','noiteato2.png','object.png','Pcapamenu.png','salamonica.png',
+    'caminho mendigo.png','casa engenho noite.png','cena_cidade_n_1.png',
+    'floresta 2 noite.png','fugitivo escondido moita.png','mesa introducao.png',
+    'terreiro senzala.png','novocomercio.png','muroalt.png','arcosdalapatransngt.png',
+    'menu person.png','arcosdalapatrans.png','rua comercio alternativa.png',
+    'fimarm.png','viela.png','sala clara.png','floresta vazia 1n.png',
+  ].map(f => ({ src: `./Nova pasta/${f}`, label: f.replace(/\.[^.]+$/, '') }));
 
-      <div class="carimbo-area">
-        <div id="carimbo" class="carimbo">INTERNADO<br><span class="carimbo-sub">CASA VERDE</span></div>
-      </div>
+  componentDidUpdate() {
+    this.portfolioImgEls.forEach((el, i) => {
+      if (el && !el.src) el.src = this.portfolioImages[i].src;
+    });
+    if (this.portfolioZoomImgEl && this.state.portfolioZoom &&
+        this.portfolioZoomImgEl.src !== this.state.portfolioZoom) {
+      this.portfolioZoomImgEl.src = this.state.portfolioZoom;
+    }
+  }
 
-      <div class="botoes-resultado">
-        <button id="btn-copiar" class="botao-secundario">Copiar Dossier</button>
-        <button id="btn-reiniciar" class="botao-terciario">Nova Avaliação</button>
-      </div>
+  openPortfolioZoom = (src) => this.setState({ portfolioZoom: src });
+  closePortfolioZoom = () => this.setState({ portfolioZoom: null });
 
-      <p class="nota-bacamarte">
-        "A ciência não erra. Erra quem pretende escapar a ela."<br>
-        <em>— Dr. Simão Bacamarte</em>
-      </p>
-    </div>
-  </div>
+  projects = [
+    {
+      id: 'p1',
+      tag: 'PROJETO #001',
+      year: '▸ 2026\n',
+      title: 'O Alienista',
+      desc: 'Jogo narrativo e de gestão documental, utilizando mecânicas inspiradas em Papers, Please para adaptar o clássico da literatura brasileira O Alienista de 1882. O jogo traduz a crítica institucional de Machado de Assis em mecânicas interativas de triagem de pacientes. O jogo usa da patologização do comportamento como forma de controle social.',
+      detail: 'O ALIENISTA: UM JOGO EDUCACIONAL SOBRE PODER, NORMA E SENSO CRÍTICO\nA PARTIR DO CONTO DE MACHADO DE ASSIS\n\nRESUMO\n\nEste trabalho apresenta O Alienista, jogo educacional desenvolvido em Godot 4\ncom base no conto homônimo de Machado de Assis. O jogo coloca o jogador como funcionário da Casa Verde — subordinado ao doutor\nSimão Bacamarte — e o obriga a tomar decisões sobre quem é são e quem é alienado\nem uma vila do século XIX, enquanto três facções de poder — a Igreja, a Câmara\nMunicipal e o Povo — pressionam por resultados que favoreçam seus próprios interesses. O objetivo não é ensinar o conto, mas criar condições para que o\njogador o vivencie: sinta o peso de julgar pessoas com base em critérios que mudam,\nperceba como estruturas de poder operam sobre a ciência e a lei, e questione quem\ndefine o que é normal e com que finalidade. O artigo descreve a motivação do\nprojeto, as funcionalidades implementadas, a arquitetura técnica, os desafios\nsuperados e os resultados alcançados.\n\nPalavras-chave: jogo educacional, literatura brasileira, senso crítico, Machado de\nAssis, Godot 4, poder e norma. \n\n1. INTRODUÇÃO\n================================================================================\n\n \n\n"O Alienista" é um conto publicado por Machado de Assis em 1882, originalmente\nnas páginas da Gazeta de Notícias. A história é simples na superfície: um médico\nconstrói uma casa de recolhimento para loucos em Itaguaí — a Casa Verde — e começa\na internar quase toda a população, revisa seus critérios várias vezes, e termina\ninternando a si mesmo como o único verdadeiramente equilibrado. Mas o que Machado\nfez com essa história simples é uma das críticas mais sofisticadas da literatura\nbrasileira ao poder institucional.\n\nO conto mostra três forças tentando controlar quem entra e quem sai da Casa Verde:\na Câmara Municipal, que quer proteger aliados políticos; a Igreja, que reivindica\nque desvio moral é pecado e não doença; e o Povo, que começa a perceber que os\ncritérios do doutor sempre favorecem quem está no topo. Bacamarte, por sua vez,\nage em nome da ciência — e é justamente isso que torna o conto tão atual. O\ndiscurso científico pode ser tão autoritário quanto qualquer outro quando não tem\nlimite externo, quando não responde a ninguém, quando define sozinho o que é normal\ne o que deve ser excluído.\n\nEsse debate não ficou no século XIX. Lima Barreto, em Triste Fim de Policarpo\nQuaresma (1915), narra a história de um homem cuja paixão excessiva pelo Brasil —\no estudo do folclore, a defesa da língua tupi, o projeto de reforma agrária — é\ntratada como loucura pelos que têm interesse em que nada mude. Policarpo é\ninternado não porque perdeu o juízo, mas porque incomoda. A estrutura é a mesma\ndo conto de Machado: o poder usa o diagnóstico como ferramenta de silêncio.\n\nÉ nessa tradição crítica da literatura brasileira que o projeto se insere. O jogo\nnão é uma adaptação do conto — é um convite a habitá-lo.\n\n\n 2. MOTIVAÇÃO E OBJETIVOS\n================================================================================\n\n \n\nO ponto de partida do projeto foi uma constatação pedagógica: estudantes leem o\nconto, identificam o enredo e conseguem responder questões de prova, mas raramente\nsentem a obra. A distância temporal, a ironia machadiana e a densidade política do\ntexto criam uma barreira entre o leitor e o que está em jogo.\n\nJogos educacionais podem reduzir essa distância porque substituem a posição de\nobservador pela de agente. Quando o jogador precisa decidir se uma pessoa é sã ou\nalienada, sabendo que há pressão política, social e religiosa sobre essa decisão,\nele não está mais interpretando o texto — está dentro do problema que o texto\ndescreve.\n\nOs objetivos do projeto foram:\n\n  1. Criar uma experiência que tornasse palpável a discussão sobre poder e norma\n     presente no conto de Machado de Assis.\n\n  2. Valorizar a literatura brasileira como fonte de reflexão crítica sobre questões\n     que continuam relevantes — não como patrimônio a ser memorizado.\n\n  3. Desenvolver mecânicas de jogo que forçassem o jogador a tomar decisões com\n     consequências reais, sem resposta correta óbvia, estimulando o senso crítico\n     em vez de respostas automáticas.\n\n  4. Produzir um jogo funcionalmente completo, com arquitetura extensível que\n     permita uso em contexto escolar.\n\n\n 3. ESTRUTURA DO JOGO E MECÂNICAS PRINCIPAIS\n================================================================================\n\n \n\nO jogo se passa ao longo de vinte dias de trabalho na Casa Verde. A cada dia, o\njogador recebe entre dois e cinco pacientes, conduz um interrogatório com cada um\ne decide se a pessoa deve ser internada (ALIENADO) ou liberada (SÃO).\n\n3.1 O Interrogatório\n\nCada paciente é definido por um arquivo externo em formato JSON, com identidade,\nficha clínica, perguntas disponíveis e evidências associadas a cada resposta. O\njogador escolhe qual pergunta fazer e em qual tom — neutro, firme ou coercitivo.\nO tom altera a resposta do paciente e pode revelar evidências diferentes. Depois\nde coletar evidências suficientes, o jogador emite o veredicto.\n\nEsse mecanismo traduz, em forma jogável, a discussão que o conto levanta: o mesmo\ncomportamento pode ser visto de formas diferentes dependendo de como a pergunta é\nfeita. A coerção produz confissões, mas também distorce o que a pessoa realmente\né.\n\n3.2 Os Decretos\n\nCada dia tem um decreto ativo — o critério científico pelo qual Bacamarte julga\nnaquele momento. Os decretos mudam ao longo do jogo, tal como no conto: o que era\nloucura na semana passada pode ser saúde hoje, e vice-versa. O jogador precisa\nreler os critérios a cada fase, o que força a percepção de que a norma não é\nnatural — ela é construída, revisada e contestada.\n\nOs decretos incluem casos como ideia fixa, ambição excessiva, honestidade absoluta,\npaciência doentia, equilíbrio perfeito e virtude total — todos satirizando a\ntendência de transformar qualquer excesso de caráter em patologia.\n\n3.3 As Facções e os Bilhetes\n\nTrês facções acompanham o trabalho do jogador e enviam bilhetes entre os dias:\n\n  - A Câmara Municipal defende internados com poder político ou pede internação\n    de quem incomoda seus interesses.\n\n  - A Igreja argumenta que pecado não é doença e que a caridade cristã não pode\n    ser diagnosticada como loucura.\n\n  - O Povo começa com queixas de injustiça de classe e escala até um ultimato de\n    invasão à Casa Verde.\n\nO jogador pode ceder às pressões ou resistir. Ceder reduz a tensão social mas\ncompromete a integridade das decisões. Resistir mantém a coerência científica mas\naproxima o jogo de um dos finais mais violentos. O sistema acumula pontos por\nfacção apenas quando o jogador efetivamente cede — não quando a decisão clínica\ncoincide com o que a facção queria, o que preserva a ambiguidade moral.\n\n3.4 O Sistema de Reputação\n\nTrês eixos independentes medem o estado do jogo:\n\n  - Prestígio de Bacamarte: como a comunidade científica e as elites o veem.\n  - Tensão de Itaguaí: o nível de agitação popular. Se chegar ao limite, a\n    invasão acontece antes do tempo.\n  - Moral do jogador: uma medida interna de coerência entre as decisões tomadas\n    e os critérios vigentes.\n\nEsses eixos não se somam nem se anulam automaticamente — o jogador pode ter alto\nprestígio e moral baixa, ou tensão alta com muita integridade. Isso reflete a\nrealidade que o conto descreve: fazer a coisa certa pode ser politicamente custoso.\n\n3.5 Os Finais\n\nO final é determinado pela facção dominante ao fim dos vinte dias:\n\n  - Povo dominante: a população invade e destrói a Casa Verde. A pesquisa de\n    Bacamarte termina pela força.\n  - Igreja dominante: a Casa Verde é transformada em Casa de Misericórdia, sob\n    administração religiosa. A ciência cede ao Sacramento.\n  - Câmara dominante: a Casa Verde torna-se instituição de Estado, com critérios\n    revisados por comissão política. A ciência cede ao poder.\n  - Empate: Bacamarte permanece sozinho, sem aliados, no silêncio da instituição\n    que construiu.\n\nNenhum final é apresentado como vitória ou derrota explícita. O jogo encerra e\ndeixa o julgamento para o jogador — o mesmo gesto que Machado de Assis faz no\nconto.\n\n\n 4. ARQUITETURA TÉCNICA\n================================================================================\n\n \n\nO projeto foi desenvolvido em Godot 4, com GDScript como linguagem principal. A\narquitetura foi pensada para separar dados de lógica, permitindo que novos\npersonagens, bilhetes e dias sejam criados sem alteração de código.\n\n4.1 Estrutura de Dados\n\nCada elemento do jogo é definido em JSON externo:\n\n  - NPCs: identidade, ficha clínica, pool de falas do narrador, perguntas por\n    tom, evidências e perfil oculto com diagnóstico por decreto.\n  - Bilhetes: remetente, texto, facção, NPC-alvo, decisão esperada e efeitos\n    sobre os três eixos de reputação.\n  - Dias: lista de NPCs ativos, decreto de referência, salário e eventos (bilhetes,\n    cenas de jornal, transições especiais).\n\n4.2 Sistema de Save\n\nO jogo usa checkpoints por dia. Ao final de cada dia, o estado completo é salvo:\ndecisões tomadas, bilhetes recebidos, reputação acumulada, fase atual e flags de\neventos especiais (como a investigação da cela e o caso do guarda corrompido). Ao\ncarregar, o sistema reconstrói o estado exatamente onde o jogador parou.\n\n4.3 Autoloads Globais\n\nTrês sistemas globais rodam durante todo o jogo:\n\n  - SaveManager: gerencia checkpoints e transições entre dias.\n  - ReputacaoManager: mantém os três eixos de reputação e aplica efeitos.\n  - FactionSystem: acumula pontos por facção e determina o final.\n\n\n 5. DESAFIOS TÉCNICOS\n================================================================================\n\n\nO principal desafio foi a sincronização entre transições de cena e o estado do\nsave. O jogo tem cenas especiais — como a investigação da cela — que interrompem\no fluxo do dia e precisam retornar ao ponto exato sem duplicar eventos já\nmostrados. A solução foi salvar o checkpoint antes de transitar para a cena\nespecial, com uma flag indicando que o evento já ocorreu. Ao retornar, o sistema\ndetecta a flag e pula o evento.\n\nUm segundo desafio foi o sistema de bilhetes: cada bilhete precisa ser exibido\numa única vez, no dia correto, sem reaparecer se o jogador recarregar a partida.\nIsso exigiu controle de estado nos eventos do dia, não no carregamento global.\n\nUm terceiro desafio foi manter a extensibilidade do sistema de NPCs. Com mais de\nquarenta personagens, qualquer dependência de código para cada personagem se torna\ninviável. A solução foi o formato JSON com campos padronizados e um único sistema\nde interrogatório que lê e interpreta qualquer ficha no mesmo formato.\n\n \n\n6. RESULTADOS\n================================================================================\n\n \n\nO jogo implementa vinte dias de jogo com mais de quarenta NPCs distribuídos em\ntreze decretos diagnósticos diferentes. O sistema de bilhetes cobre um arco\nnarrativo completo para as três facções, com escalada de tensão ao longo dos dias.\nO sistema de reputação e o sistema de facções determinam quatro finais possíveis\ncom variações internas.\n\nDo ponto de vista pedagógico, o projeto entrega aquilo que se propôs: o jogador\nque completa o jogo foi obrigado a tomar decisões difíceis repetidas vezes, sentiu\na pressão de diferentes forças sobre suas escolhas, e precisou reler critérios\nque mudavam — o que é, em essência, a experiência que "O Alienista" propõe ao\nleitor.\n\nA literatura brasileira não é o pano de fundo do jogo. É o problema central.\n\n\n 7. CONSIDERAÇÕES FINAIS\n================================================================================\n\n \n\nO Alienista como jogo é uma aposta na capacidade da ficção interativa de fazer\no que a leitura passiva nem sempre consegue: colocar o estudante dentro da\ncontradição, não apenas diante dela. Quando o jogador se vê internando alguém\npor pressão política e justificando para si mesmo que foi uma decisão clínica,\nele está reproduzindo — em miniatura, em segurança, com possibilidade de reflexão\n— o mesmo movimento que o conto descreve em Bacamarte.\n\nIsso é senso crítico: não a capacidade de identificar o erro nos outros, mas de\nreconhecer os mecanismos que operam sobre as próprias decisões.\n\nMachado de Assis escreveu isso em 1882. Continua atual. Um jogo pode ser um bom\nmotivo para descobrir por quê. \n\n',
+      stack: ['Godot 4', 'GDScript', 'Pixel Art'],
+      link: '#',
+      badgeBg: '#e8c84a',
+      badgeColor: '#1a1a1a',
+    },
+    {
+      id: 'p2',
+      tag: 'PROJETO #002',
+      year: '▸ 2025',
+      title: 'Jogo Pai contra Mãe',
+      desc: 'Pai contra mãe é uma adaptação do conto de Machado de Assis para uma graphic novel interativa, que traz questionamentos e fomenta o estímulo crítico através de escolhas morais. Trata ativamente sobre escravidão, racismo estrutural e violência de gênero.',
+      detail: 'PAI CONTRA MÃE: UMA GRAPHIC NOVEL EDUCACIONAL BASEADA EM MACHADO DE ASSIS\n\nRESUMO\n\nEste artigo apresenta Pai Contra Mãe, uma graphic novel interativa desenvolvida\nem Ren\'Py com base no conto homônimo de Machado de Assis, publicado em 1906.\nO projeto coloca o jogador no papel de Cândido Neves, caçador de escravos no Rio\nde Janeiro imperial, e o força a tomar decisões que refletem os dilemas brutais\nde quem sobrevive dentro de um sistema escravocrata. Desenvolvido para uso em\nsala de aula, o jogo usa a literatura brasileira como ponto de entrada para\ndiscussões sobre escravidão, poder e ética. Os cenários foram construídos com\nbase em pinturas históricas reais, especialmente da obra de Jean-Baptiste Debret,\npara retratar o Rio de Janeiro do século XIX com autenticidade visual.\n\nPalavras-chave: graphic novel interativa, Machado de Assis, escravidão, senso\ncrítico, Ren\'Py, Debret, literatura brasileira.\n\n\n1. INTRODUÇÃO\n\nMachado de Assis é o autor mais estudado do ensino médio brasileiro e um dos\nmenos sentidos. Estudantes identificam o enredo, respondem questões de prova e\npassam ao próximo texto sem que a obra tenha deixado marca. O problema raramente\né de vocabulário — é de distância. O texto está ali; o estudante está do lado de\nfora.\n\nJogos e ficções interativas têm uma qualidade que a leitura passiva não oferece:\ncolocam o leitor dentro da contradição. Quando o estudante precisa tomar uma\ndecisão — capturar ou não capturar, sobreviver ou recuar — ele deixa de observar\no dilema e passa a sentir o peso dele. Esse é o fundamento de Pai Contra Mãe.\n\nO projeto não foi feito para substituir a leitura do conto. Foi feito para tornar\nessa leitura necessária.\n\n\n2. O CONTO E SEU PROBLEMA CENTRAL\n\n"Pai contra Mãe" foi publicado em 1906 no livro Relíquias de Casa Velha. É um dos\ntextos mais diretos que Machado escreveu sobre a escravidão — e um dos mais\nperturbadores, porque não condena ninguém abertamente.\n\nO narrador descreve com naturalidade os instrumentos usados para controlar\nescravizados: a máscara de fólego, o ferro ao pescoço, o gancho de alcaçuz. Depois\napresenta Cândido Neves, um homem pobre sem ofício fixo que encontra na caça a\nescravos fugidos o único meio de sustentar a família. Quando sua mulher engravida\ne a miséria se torna insuportável, Cândido é forçado a escolher: entregar o filho\nà Roda dos Enjeitados ou capturar Arminda, escravizada fugida e grávida, para\nreceber a recompensa. Ele captura Arminda. O bebê dela nasce morto. Cândido fica\ncom o filho e o conto termina com ele feliz.\n\nMachado não julga. Não há lição explícita. O texto mostra o que o sistema faz\ncom as pessoas: transforma a crueldade em necessidade e a necessidade em\nnormalidade. É essa estrutura que Lima Barreto vai retomar em Triste Fim de\nPolicarpo Quaresma — um homem destruído não por maldade própria, mas por existir\nnum sistema que pune quem não se encaixa. Em Machado e em Barreto, o problema\nnão é o indivíduo: é a estrutura que o produz.\n\n\n3. O JOGO\n\nPai Contra Mãe é uma graphic novel interativa ambientada no Rio de Janeiro do\nséculo XIX. O jogador assume o papel de Cândido Neves e acompanha sua história\npor meio de escolhas que alteram o rumo da narrativa e levam a múltiplos finais\npossíveis.\n\nA engine escolhida foi Ren\'Py, plataforma consolidada para ficções visuais\ninterativas, que permite construir narrativas ramificadas com imagens, trilha\nsonora e diálogos sem exigir infraestrutura técnica complexa. Isso torna o jogo\nacessível tanto para distribuição quanto para uso direto em sala de aula.\n\nA mecânica central é a decisão narrativa com consequência real. Cada escolha\nfeita como Cândido carrega o peso do contexto: ele não é um vilão que escolhe\no mal — é um homem que escolhe sobreviver dentro de um sistema que produzia\nesse tipo de escolha. O jogo não permite que o estudante julgue de fora. Para\navançar, é preciso habitar a perspectiva de Cândido — e ao final confrontar a\nmesma questão que o conto coloca: é possível ser culpado e ter razão ao mesmo\ntempo?\n\n\n4. AUTENTICIDADE VISUAL\n\nPara retratar o Rio de Janeiro imperial com fidelidade histórica, os assets\nvisuais foram baseados em pinturas e registros reais do período. A obra de\nJean-Baptiste Debret, pintor francês que viveu no Brasil entre 1816 e 1831, foi\na principal referência. Debret documentou com precisão a vida urbana carioca:\nas ruas, os ofícios, os trajes, as relações entre livres e escravizados e os\ninstrumentos de controle e punição que aparecem no próprio conto de Machado.\nOutros artistas viajantes do mesmo período, como Johann Moritz Rugendas, também\nserviram de base para a reconstituição dos cenários.\n\nEssa escolha não é apenas estética — é pedagógica. Quando o estudante reconhece\nnos cenários do jogo imagens que existem em museus e livros de história, a ficção\ne o registro histórico se tornam inseparáveis. O Rio de Janeiro do jogo não é\numa invenção: é uma interpretação de documentos visuais reais, o que ancora o\ndebate literário na evidência histórica.\n\n\n5. OBJETIVO EDUCACIONAL E SENSO CRÍTICO\n\nO jogo foi desenvolvido para uso em sala de aula como ferramenta de discussão\nsobre escravidão, relações de poder e dilemas éticos na sociedade brasileira do\nséculo XIX. Mas o objetivo mais preciso é estimular o senso crítico — e senso\ncrítico, aqui, não significa identificar o erro nos outros. Significa reconhecer\nos mecanismos que operam sobre as próprias decisões.\n\nQuando o estudante joga Pai Contra Mãe e escolhe capturar Arminda para salvar\no filho, ele sai do jogo com uma pergunta que nenhuma questão de prova produz:\no que me fez fazer isso? Qual sistema me colocou nessa posição? Quem se beneficia\nde que essa seja a única saída disponível?\n\nÉ exatamente isso que Machado de Assis quis em 1906. Um jogo pode ser, hoje, um\nbom motivo para descobrir por quê.\n\n\n6. CONSIDERAÇÕES FINAIS\n\nA literatura brasileira do século XIX tem muito a dizer sobre o Brasil de hoje.\nEscravidão, silenciamento, poder que se legitima pelo discurso da necessidade —\nnada disso ficou no passado. O que ficou no passado foi a data de publicação.\n\nPai Contra Mãe é uma aposta de que o estudante que habitar essa história, mesmo\nque por trinta minutos na frente de uma tela, vai chegar ao conto com perguntas\nque ele ainda não tinha. E que essas perguntas, ao contrário das respostas, duram.\n\n',
+      stack: ['RenPy', 'Educativo', 'Literatura Brasileira'],
+      link: 'https://filipemedeirossantos.github.io/paicontramae/',
+      badgeBg: '#4a7c3f',
+      badgeColor: '#fff',
+    },
+  ];
 
-  <script src="quiz.js"></script>
+  componentDidMount() {
+    this.onScroll = () => {
+      const doc = document.documentElement;
+      const scrollTop = window.scrollY || doc.scrollTop;
+      const height = (doc.scrollHeight - doc.clientHeight) || 1;
+      this.setState({ scrollProgress: Math.min(100, Math.max(0, (scrollTop / height) * 100)) });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
+
+  handleOpenP1 = () => this.setState({ openId: 'p1' });
+  handleOpenP2 = () => this.setState({ openId: 'p2' });
+  handleClose = () => this.setState({ openId: null });
+  stop = (e) => { if (e && e.stopPropagation) e.stopPropagation(); };
+
+  renderVals() {
+    const openProject = this.projects.find(p => p.id === this.state.openId) || null;
+    const portfolioImages = this.portfolioImages.map((img, i) => ({
+      label: img.label,
+      onClick: () => this.openPortfolioZoom(img.src),
+      setRef: (el) => { this.portfolioImgEls[i] = el; if (el && !el.src) el.src = img.src; },
+    }));
+    return {
+      scrollProgress: this.state.scrollProgress,
+      projects: this.projects,
+      openProject,
+      openP1: this.handleOpenP1,
+      openP2: this.handleOpenP2,
+      closeProject: this.handleClose,
+      stopPropagation: this.stop,
+      portfolioImages,
+      portfolioZoomOpen: !!this.state.portfolioZoom,
+      closePortfolioZoom: this.closePortfolioZoom,
+      setPortfolioZoomRef: (el) => {
+        this.portfolioZoomImgEl = el;
+        if (el && this.state.portfolioZoom) el.src = this.state.portfolioZoom;
+      },
+    };
+  }
+}
+</script>
 </body>
 </html>
