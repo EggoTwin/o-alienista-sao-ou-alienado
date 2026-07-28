@@ -10,6 +10,11 @@
 <helmet data-dc-atomics="">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>
+  @font-face {
+    font-family: 'Quimbie';
+    src: url('./Quimbie Ultra Heavy.ttf') format('truetype');
+    font-display: swap;
+  }
   body { margin: 0; }
   a { color: #4a7c3f; }
   a:hover { color: #e8c84a; }
@@ -34,10 +39,9 @@
       
       
     </div>
-    <div style="position:relative; padding:32px 48px 40px; max-width:1000px; text-align:center;">
-      <span style="display:inline-block; font-size:8px; background:#4a7c3f; color:#fff; border:2px solid #2b2b2b; padding:3px 10px; letter-spacing:1px; margin-bottom:16px;">PROJETO #002 · 2025</span>
-      <h1 style="font-family:'Press Start 2P', monospace; font-size:26px; line-height:1.5; letter-spacing:1px; color:#fff; margin:0; text-shadow:0 0 16px rgba(232,200,74,0.4);">O ALIENISTA</h1>
-      <div style="font-size:11px; color:rgba(255,255,255,0.6); margin-top:12px;">// uma graphic novel interativa baseada em Machado de Assis</div>
+    <div style="position:relative; top:100px; padding:32px 48px 40px; max-width:1000px; text-align:center;">
+      <h1 style="font-family:'Quimbie', 'Press Start 2P', monospace; font-size:64px; line-height:1.5; letter-spacing:1px; color:#fff; margin:0; text-shadow:0 0 16px rgba(232,200,74,0.4);">O ALIENISTA</h1>
+      <div style="font-size:11px; color:rgba(255,255,255,0.6); margin-top:12px;">São ou Alienado</div>
     </div>
   </section>
 
@@ -45,14 +49,14 @@
 
     <section style="margin-bottom:48px;">
       <span style="display:inline-block; font-family:'Press Start 2P', monospace; font-size:9px; color:#6b6b6b; letter-spacing:1px; margin-bottom:12px;">▸ APRESENTAÇÃO</span>
-      <p style="font-size:13px; line-height:2.1; color:#333; margin:0;">XXXX — escreva aqui a apresentação do projeto: o conceito por trás de "O Alienista", a adaptação da obra de Machado de Assis, e o que torna essa experiência interativa única.</p>
+      <p style="font-size:13px; line-height:2.1; color:#333; margin:0;">Itaguaí, século XIX. O Dr. Simão Bacamarte decidiu que a loucura tem cura — e que ele é o único capaz de diagnosticá-la. Você cuida do que sobra: os papéis, as famílias e as perguntas que ninguém quer fazer.</p>
     </section>
 
     <section style="margin-bottom:48px;">
       <span style="display:inline-block; font-family:'Press Start 2P', monospace; font-size:9px; color:#6b6b6b; letter-spacing:1px; margin-bottom:12px;">▸ GALERIA</span>
       <div style="position:relative; border:3px solid #2b2b2b; background:#12172a; box-shadow:4px 4px 0 #2b2b2b;">
         <div style="position:relative; width:100%; aspect-ratio:16/9; overflow:hidden;">
-          <sc-for list="{{ images }}" as="slide" hint-placeholder-count="4">
+          <sc-for list="{{ images }}" as="slide" hint-placeholder-count="8">
             <div onclick="{{ slide.onZoom }}" style="position:absolute; inset:0; opacity:{{ slide.opacity }}; transition:opacity 0.25s ease; cursor:zoom-in; display:flex; align-items:center; justify-content:center; background:#12172a;">
               <img ref="{{ slide.setRef }}" alt="{{ slide.alt }}" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
@@ -61,7 +65,7 @@
         <button onclick="{{ prevImage }}" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); width:34px; height:34px; border:2px solid #2b2b2b; background:#fffdf6; font-size:14px; cursor:pointer;" style-hover="background:#e8c84a;">‹</button>
         <button onclick="{{ nextImage }}" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); width:34px; height:34px; border:2px solid #2b2b2b; background:#fffdf6; font-size:14px; cursor:pointer;" style-hover="background:#e8c84a;">›</button>
         <div style="position:absolute; bottom:10px; left:0; right:0; display:flex; justify-content:center; gap:8px;">
-          <sc-for list="{{ dots }}" as="dot" hint-placeholder-count="4">
+          <sc-for list="{{ dots }}" as="dot" hint-placeholder-count="8">
             <div onclick="{{ dot.onSelect }}" style="width:10px; height:10px; border:2px solid #2b2b2b; background:{{ dot.bg }}; cursor:pointer;"></div>
           </sc-for>
         </div>
@@ -71,7 +75,10 @@
 
     <section style="margin-bottom:48px;">
       <span style="display:inline-block; font-family:'Press Start 2P', monospace; font-size:9px; color:#6b6b6b; letter-spacing:1px; margin-bottom:12px;">▸ SOBRE O PROJETO</span>
-      <p style="font-size:13px; line-height:2.1; color:#333; margin:0;">XXXX — texto explicativo detalhado: processo de desenvolvimento, decisões narrativas e de design, ferramentas utilizadas e aprendizados durante a produção.</p>
+      <p style="font-size:13px; line-height:2.1; color:#333; margin:0 0 18px;">O Alienista é um jogo narrativo educacional baseado no conto homônimo de Machado de Assis. O jogador assume o papel de funcionário do consultório do Dr. Simão Bacamarte em Itaguaí — não o médico, mas quem fica com os documentos, os bilhetes e as consequências.</p>
+      <p style="font-size:13px; line-height:2.1; color:#333; margin:0 0 18px;">A cada dia chegam pedidos de internação, visitas de familiares e pressões das três facções da cidade: a Igreja, a Câmara e o Povo. O jogador lê laudos, arrasta evidências para o mural de investigação, preenche diagnósticos e decide — dentro dos limites do que lhe é permitido decidir.</p>
+      <p style="font-size:13px; line-height:2.1; color:#333; margin:0 0 18px;">Mecânicas de gestão documental, sistemas de facção e tarefas domésticas colocam o jogador no interior de uma engrenagem que funciona perfeitamente enquanto alguém a alimenta sem perguntar por quê. A ironia de Machado é o motor: o absurdo não grita, ele é arquivado.</p>
+      <p style="font-size:13px; line-height:2.1; color:#333; margin:0;">Desenvolvido como projeto educacional no Instituto Federal Catarinense (IFC Camboriú), O Alienista busca aproximar o leitor jovem da literatura brasileira do século XIX por meio do jogo — sem simplificar a obra e sem perder a sua acidez.</p>
     </section>
 
     <section style="margin-bottom:16px;">
@@ -116,12 +123,10 @@ class Component extends DCLogic {
     }
   }
 
-  images = [
-    { src: 'https://placehold.co/1280x720/12172a/e8c84a?text=Imagem+1', alt: 'Imagem 1 do projeto' },
-    { src: 'https://placehold.co/1280x720/12172a/e8c84a?text=Imagem+2', alt: 'Imagem 2 do projeto' },
-    { src: 'https://placehold.co/1280x720/12172a/e8c84a?text=Imagem+3', alt: 'Imagem 3 do projeto' },
-    { src: 'https://placehold.co/1280x720/12172a/e8c84a?text=Imagem+4', alt: 'Imagem 4 do projeto' },
-  ];
+  images = [1, 2, 3, 4, 5, 6, 7, 8].map(n => ({
+    src: `./screenshots/o alienista screenshots (${n}).png`,
+    alt: `Captura de tela ${n} de O Alienista`,
+  }));
 
   next = () => this.setState(s => ({ index: (s.index + 1) % this.images.length }));
   prev = () => this.setState(s => ({ index: (s.index - 1 + this.images.length) % this.images.length }));
